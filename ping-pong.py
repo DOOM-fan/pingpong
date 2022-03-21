@@ -18,14 +18,14 @@ class Gamesprite(sprite.Sprite):
         keys = key.get_pressed()
         if keys[K_UP] and self.rect.y > 5:
             self.rect.y -= self.speedy
-        if keys[K_DOWN] and self.rect.y < 395:
+        if keys[K_DOWN] and self.rect.y < 450:
             self.rect.y += self.speedy
         self.reset()
     def move1(self):
         keys = key.get_pressed()
         if keys[K_w] and self.rect.y > 5:
             self.rect.y -= self.speedy
-        if keys[K_s] and self.rect.y < 395:
+        if keys[K_s] and self.rect.y < 450:
             self.rect.y += self.speedy
         self.reset()
     def bounce(self):
@@ -33,7 +33,7 @@ class Gamesprite(sprite.Sprite):
         self.rect.y += self.speedy
         if sprite.collide_rect(player1, ball) or sprite.collide_rect(player2, ball):
             self.speedx *= -1
-        if self.rect.y < 5 or self.rect.y > 395:
+        if self.rect.y < 5 or self.rect.y > 450:
             self.speedy *= -1
         self.reset()
 player1 = Gamesprite('racket.png', (65, 130), 40, 200, 0, 4)
