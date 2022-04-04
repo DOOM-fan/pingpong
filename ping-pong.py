@@ -38,7 +38,12 @@ class Gamesprite(sprite.Sprite):
         self.reset()
 player1 = Gamesprite('racket.png', (65, 130), 40, 200, 0, 4)
 player2 = Gamesprite('racket.png', (65, 130), 600, 200, 0, 4)
-ball = Gamesprite('ball.png', (50, 50), 320, 200, 4, 4)     
+ballspeedx = 0
+ballspeedy = 0
+while ballspeedx == 0 or ballspeedy == 0:
+    ballspeedx = randint(-2, 2)
+    ballspeedy = randint(-2, 2)
+ball = Gamesprite('ball.png', (50, 50), 320, 200, 2*ballspeedx, 2*ballspeedy)      
 game = True
 clock = time.Clock()
 FPS = 60
