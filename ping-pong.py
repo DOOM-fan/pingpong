@@ -52,4 +52,7 @@ while game:
         if e.type == QUIT:
             quit()
             exit(0)
+    if ball.rect.x < 10 or ball.rect.x > 630:
+        quit()
+        exit(0)
     display.update()
